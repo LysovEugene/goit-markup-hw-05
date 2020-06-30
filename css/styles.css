@@ -96,6 +96,12 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  position: relative;
+  height: 80px;
+}
+.site-nav .link-page {
+  position: relative;
+  height: 80px;
 }
 
 .site-nav .link:hover,
@@ -108,9 +114,22 @@ body {
   color: var(--accent-color);
 }
 
-.site-nav .link.current::after {
+.site-nav .link-page::after {
   content: "";
   width: 100%;
+  position: absolute;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.site-nav .link-page:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .list {
@@ -120,6 +139,8 @@ body {
 }
 .site-nav .phone-email {
   color: var(--primary-text-color);
+
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .phone-email:hover,
@@ -367,7 +388,9 @@ margin-right: 0;
   height: 422px;
   background-color: #fff;
   padding-bottom: 24px;
+  box-shadow: none;
   border-radius: 0px 0px 4px 4px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-team-list .item:last-child {
@@ -393,12 +416,14 @@ margin-right: 0;
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-social-link {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-network-link:hover,
 .social-network-link:focus {
@@ -471,14 +496,9 @@ margin-right: 0;
   box-sizing: border-box;
   border-radius: 4px;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* .icon-clients {
-  fill: #afb1b8;
-} */
-/* .client4 {
-  width: 100px;
-  height: 100px;
-} */
 
 .icon-clients:hover,
 .icon-clients:focus {
@@ -563,6 +583,7 @@ margin-right: 0;
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-network-link-footer:hover,
 .social-network-link-footer:focus {
@@ -598,6 +619,11 @@ margin-right: 0;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
+}
+
+address .link {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address .link:hover,
 .address .link:focus {
